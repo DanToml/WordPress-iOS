@@ -1,0 +1,11 @@
+version: 2
+
+jobs:
+  build:
+    macos:
+      xcode: 9.2.0
+    steps:
+      - checkout
+      - run: curl -sS https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash
+      - run: bundle install
+      - run: bundle exec rake build
