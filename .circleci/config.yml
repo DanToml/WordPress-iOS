@@ -7,5 +7,4 @@ jobs:
     steps:
       - checkout
       - run: curl -sS https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash
-      - run: bundle install
-      - run: bundle exec rake build
+      - run: rake build
