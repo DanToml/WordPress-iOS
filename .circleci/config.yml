@@ -6,9 +6,7 @@ workflows:
     jobs:
       - lint
       - test
-      - build_binary:
-          requires:
-            - test
+      - build_binary
 # filters:
 #   branches:
 #     only: master
