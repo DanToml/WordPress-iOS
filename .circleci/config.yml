@@ -7,4 +7,10 @@ jobs:
     steps:
       - checkout
       - run: curl -sS https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash
+      - restore_cache:
+          key: v1-gems-{{ checksum "Gemfile.lock" }}
+      - run: rake dependencies
+      - save_cache:
+          key: v1-gems-{{ checksum "Gemfile.lock" }}
+          paths: vendor/bundle
       - run: rake build
