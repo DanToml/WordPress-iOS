@@ -1,7 +1,19 @@
 version: 2
+workflows:
+  version: 2
+  build_test:
+    jobs:
+      - lint
+      - test
 
 jobs:
-  build:
+  lint:
+    docker:
+      - image: dantoml/swiftlint
+    steps:
+      - checkout
+      - run: swiftlint lint
+  test:
     macos:
       xcode: 9.2.0
     steps:
@@ -14,3 +26,4 @@ jobs:
           paths: .bundle
 
       - run: xcodebuild -destination 'platform=iOS Simulator,name=iPhone 6s' -sdk iphonesimulator -workspace WordPress.xcworkspace -scheme WordPress -configuration Debug build test | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
+
