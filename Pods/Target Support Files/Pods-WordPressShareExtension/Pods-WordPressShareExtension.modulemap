@@ -1,0 +1,6 @@
+framework module Pods_WordPressShareExtension {
+  umbrella header "Pods-WordPressShareExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

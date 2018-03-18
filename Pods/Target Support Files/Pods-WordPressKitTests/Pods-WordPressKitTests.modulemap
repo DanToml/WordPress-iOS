@@ -1,0 +1,6 @@
+framework module Pods_WordPressKitTests {
+  umbrella header "Pods-WordPressKitTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

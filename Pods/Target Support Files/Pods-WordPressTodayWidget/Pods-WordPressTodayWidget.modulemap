@@ -1,0 +1,6 @@
+framework module Pods_WordPressTodayWidget {
+  umbrella header "Pods-WordPressTodayWidget-umbrella.h"
+
+  export *
+  module * { export * }
+}
