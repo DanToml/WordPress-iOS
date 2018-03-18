@@ -1,4 +1,5 @@
 version: 2
+
 workflows:
   version: 2
   build_test:
@@ -8,9 +9,9 @@ workflows:
       - build_binary:
           requires:
             - test
-          # filters:
-          #   branches:
-          #     only: master
+# filters:
+#   branches:
+#     only: master
 
 jobs:
   lint:
@@ -19,6 +20,7 @@ jobs:
     steps:
       - checkout
       - run: swiftlint lint
+
   build_binary:
     macos:
       xcode: 9.2.0
@@ -34,10 +36,10 @@ jobs:
     CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
       - store_artifacts:
           path: build
-      - persist_to_workspace:
-          root: build/
-          paths:
-            - build/Wordpress-iOS.xcarchive
+      # - persist_to_workspace:
+      #     root: build/
+      #     paths:
+      #       - build/Wordpress-iOS.xcarchive
   test:
     macos:
       xcode: 9.2.0
