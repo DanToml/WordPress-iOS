@@ -37,7 +37,7 @@ jobs:
       - persist_to_workspace:
           root: build/
           paths:
-            - build/WordPress-iOS.xcarchive
+            - WordPress-iOS.xcarchive
   test:
     macos:
       xcode: 9.2.0
