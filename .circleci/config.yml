@@ -30,14 +30,13 @@ jobs:
       - save_cache:
           key: v2-gems-{{ checksum "Gemfile.lock" }}
           paths: .bundle
-      - run: xcodebuild -workspace WordPress.xcworkspace -scheme WordPress -configuration Release clean archive -archivePath "build/Wordpress-iOS.xcarchive"
-    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+      - run: xcodebuild -workspace WordPress.xcworkspace -scheme WordPress -configuration Release clean archive -archivePath "build/Wordpress-iOS.xcarchive" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
       - store_artifacts:
           path: build
-      # - persist_to_workspace:
-      #     root: build/
-      #     paths:
-      #       - build/Wordpress-iOS.xcarchive
+      - persist_to_workspace:
+          root: build/
+          paths:
+            - build/Wordpress-iOS.xcarchive
   test:
     macos:
       xcode: 9.2.0
