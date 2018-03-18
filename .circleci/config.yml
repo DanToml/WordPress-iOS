@@ -7,16 +7,20 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: v1-gems-{{ checksum "Gemfile.lock" }}
+          key: v2-gems-{{ checksum "Gemfile.lock" }}
       - restore_cache:
           key: v1-pods-{{ checksum "Podfile.lock" }}
 
-      - run: rake dependencies
-      - run: bundle exec pod install
+      - run: bundle check || bundle install --path .bundle --jobs 3 --retry 3
+      - run:
+          name: Install Pods
+          command: |
+            curl -sS https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash
+            bundle exec pod install
 
       - save_cache:
-          key: v1-gems-{{ checksum "Gemfile.lock" }}
-          paths: vendor/bundle
+          key: v2-gems-{{ checksum "Gemfile.lock" }}
+          paths: .bundle
       - save_cache:
           key: v1-pods-{{ checksum "Podfile.lock" }}
           paths: Pods
