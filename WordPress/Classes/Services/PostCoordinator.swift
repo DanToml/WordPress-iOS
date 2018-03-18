@@ -12,7 +12,7 @@ class PostCoordinator: NSObject {
 
     private let mainContext = ContextManager.sharedInstance().mainContext
 
-    private let queue = DispatchQueue(label: "org.wordpress.postcoordinator")
+    private let queue = DispatchQueue(label: "org.danipress.postcoordinator")
 
     /// Saves the post to both the local database and the server if available.
     /// If media is still uploading it keeps track of the ongoing media operations and updates the post content when they finish

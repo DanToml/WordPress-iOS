@@ -40,7 +40,7 @@ static NSCache *sharedCache;
 {
     self = [super init];
     if (self) {
-        _processingQueue = dispatch_queue_create("org.wordpress.table-image-processing", DISPATCH_QUEUE_CONCURRENT);
+        _processingQueue = dispatch_queue_create("org.danipress.table-image-processing", DISPATCH_QUEUE_CONCURRENT);
         _imageCache = [WPTableImageSource sharedImageCache];
         _maxSize = CGSizeMake(ceil(size.width), ceil(size.height));
         _forceLargerSizeWhenFetching = YES;

@@ -12,7 +12,7 @@
     NSParameterAssert(timeZone != nil);
     NSParameterAssert(oauth2Token.length > 0);
     
-    [[NCWidgetController widgetController] setHasContent:YES forWidgetWithBundleIdentifier:@"org.wordpress.WordPressTodayWidget"];
+    [[NCWidgetController widgetController] setHasContent:YES forWidgetWithBundleIdentifier:@"org.danipress.WordPressTodayWidget"];
     
     // Save the token and site ID to shared user defaults for use in the today widget
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:WPAppGroupName];

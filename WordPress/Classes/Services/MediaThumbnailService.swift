@@ -13,7 +13,7 @@ class MediaThumbnailService: LocalCoreDataService {
     ///
     public typealias OnError = (Error) -> Void
 
-    private static let defaultExportQueue: DispatchQueue = DispatchQueue(label: "org.wordpress.mediaThumbnailService", autoreleaseFrequency: .workItem)
+    private static let defaultExportQueue: DispatchQueue = DispatchQueue(label: "org.danipress.mediaThumbnailService", autoreleaseFrequency: .workItem)
 
     @objc public lazy var exportQueue: DispatchQueue = {
         return MediaThumbnailService.defaultExportQueue

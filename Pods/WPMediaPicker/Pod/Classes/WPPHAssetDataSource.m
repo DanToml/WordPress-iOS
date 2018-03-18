@@ -44,7 +44,7 @@
     _observers = [[NSMutableDictionary alloc] init];
     _refreshGroups = YES;
     _cachedCollections = [[NSMutableArray alloc] init];
-    _imageGenerationQueue = dispatch_queue_create("org.wordpress.wpmediapicker.WPPHAssetDataSource", DISPATCH_QUEUE_SERIAL);
+    _imageGenerationQueue = dispatch_queue_create("org.danipress.wpmediapicker.WPPHAssetDataSource", DISPATCH_QUEUE_SERIAL);
     [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
     return self;
 }

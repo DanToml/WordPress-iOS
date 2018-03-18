@@ -26,7 +26,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>org.wordpress</string>
+			<string>org.danipress</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wordpress-oauth-v2</string>
@@ -96,7 +96,7 @@
 		<string>Noticons.ttf</string>
 	</array>
 	<key>UIApplicationShortcutWidget</key>
-	<string>org.wordpress.WordPressTodayWidget</string>
+	<string>org.danipress.WordPressTodayWidget</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

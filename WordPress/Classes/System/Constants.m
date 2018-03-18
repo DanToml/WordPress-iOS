@@ -26,22 +26,22 @@ NSString *const WPGravatarBaseURL                                   = @"http://g
 /// Notifications Constants
 ///
 #ifdef DEBUG
-NSString *const  WPPushNotificationAppId                            = @"org.wordpress.appstore.dev";
+NSString *const  WPPushNotificationAppId                            = @"org.danipress.appstore.dev";
 #else
 #ifdef INTERNAL_BUILD
-NSString *const   WPPushNotificationAppId                           = @"org.wordpress.internal";
+NSString *const   WPPushNotificationAppId                           = @"org.danipress.internal";
 #else
-NSString *const WPPushNotificationAppId                             = @"org.wordpress.appstore";
+NSString *const WPPushNotificationAppId                             = @"org.danipress.appstore";
 #endif
 #endif
 /// Keychain Constants
 ///
 #ifdef INTERNAL_BUILD
-NSString *const WPAppGroupName                                      = @"group.org.wordpress.internal";
-NSString *const WPAppKeychainAccessGroup                            = @"99KV9Z6BKV.org.wordpress.internal";
+NSString *const WPAppGroupName                                      = @"group.org.danipress.internal";
+NSString *const WPAppKeychainAccessGroup                            = @"99KV9Z6BKV.org.danipress.internal";
 #else
-NSString *const WPAppGroupName                                      = @"group.org.wordpress";
-NSString *const WPAppKeychainAccessGroup                            = @"3TMU3BH3NK.org.wordpress";
+NSString *const WPAppGroupName                                      = @"group.org.danipress";
+NSString *const WPAppKeychainAccessGroup                            = @"3TMU3BH3NK.org.danipress";
 #endif
 
 /// Share Extension Constants

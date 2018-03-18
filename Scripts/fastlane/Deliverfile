@@ -12,7 +12,7 @@
 # More information about automatic screenshot upload:
 # https://github.com/KrauseFx/deliver#upload-screenshots-to-itunes-connect
 screenshots_path "./screenshots/"
-app_identifier "org.wordpress"
+app_identifier "org.danipress"
 
 # Make sure to update these keys for a new version
 app_version "9.5"

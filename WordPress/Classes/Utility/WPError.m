@@ -10,7 +10,7 @@
 
 
 NSInteger const SupportButtonIndex = 0;
-NSString * const WordPressAppErrorDomain = @"org.wordpress.iphone";
+NSString * const WordPressAppErrorDomain = @"org.danipress.iphone";
 NSString * const WPErrorSupportSourceKey = @"helpshift-support-source";
 
 @interface WPError ()

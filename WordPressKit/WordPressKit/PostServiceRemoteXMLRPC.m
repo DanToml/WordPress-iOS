@@ -7,7 +7,7 @@
 @import WordPressShared;
 
 const NSInteger HTTP404ErrorCode = 404;
-NSString * const WordPressAppErrorDomain = @"org.wordpress.iphone";
+NSString * const WordPressAppErrorDomain = @"org.danipress.iphone";
 
 static NSString * const RemoteOptionKeyNumber = @"number";
 static NSString * const RemoteOptionKeyOffset = @"offset";

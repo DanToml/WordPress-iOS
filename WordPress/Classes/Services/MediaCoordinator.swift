@@ -16,11 +16,11 @@ class MediaCoordinator: NSObject {
     }()
     private let mainContext = ContextManager.sharedInstance().mainContext
 
-    private let queue = DispatchQueue(label: "org.wordpress.mediauploadcoordinator")
+    private let queue = DispatchQueue(label: "org.danipress.mediauploadcoordinator")
 
     // MARK: - Progress Coordinators
 
-    private let progressCoordinatorQueue = DispatchQueue(label: "org.wordpress.mediaprogresscoordinator", attributes: .concurrent)
+    private let progressCoordinatorQueue = DispatchQueue(label: "org.danipress.mediaprogresscoordinator", attributes: .concurrent)
 
     /// Tracks uploads that don't belong to a specific post
     private lazy var mediaLibraryProgressCoordinator: MediaProgressCoordinator = {

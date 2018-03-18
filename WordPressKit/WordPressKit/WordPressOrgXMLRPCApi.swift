@@ -11,7 +11,7 @@ open class WordPressOrgXMLRPCApi: NSObject {
     fileprivate let userAgent: String?
     fileprivate var backgroundUploads: Bool
     fileprivate var backgroundSessionIdentifier: String
-    @objc open static let defaultBackgroundSessionIdentifier = "org.wordpress.wporgxmlrpcapi"
+    @objc open static let defaultBackgroundSessionIdentifier = "org.danipress.wporgxmlrpcapi"
 
     fileprivate lazy var sessionManager: Alamofire.SessionManager = {
         let sessionConfiguration = URLSessionConfiguration.default

@@ -12,7 +12,7 @@ class MediaProgressCoordinatorTests: XCTestCase {
     }
 
     fileprivate func makeTestError() -> NSError {
-        return NSError(domain: "org.wordpress.media-tests", code: 1, userInfo: nil)
+        return NSError(domain: "org.danipress.media-tests", code: 1, userInfo: nil)
     }
 
     override func setUp() {

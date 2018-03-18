@@ -535,7 +535,7 @@
 
 - (NSString *)identifier
 {
-    return @"org.wordpress.medialibrary";
+    return @"org.danipress.medialibrary";
 }
 
 - (NSInteger)numberOfAssetsOfType:(WPMediaType)mediaType completionHandler:(WPMediaCountBlock)completionHandler

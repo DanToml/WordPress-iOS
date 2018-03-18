@@ -18,7 +18,7 @@ open class SharingServiceRemote: ServiceRemoteWordPressComREST {
     ///
     @objc func errorForUnexpectedResponse(_ httpResponse: HTTPURLResponse?) -> NSError {
         let failureReason = "The request returned an unexpected type."
-        let domain = "org.wordpress.sharing-management"
+        let domain = "org.danipress.sharing-management"
         let code = 0
         var urlString = "unknown"
         if let unwrappedURL = httpResponse?.url?.absoluteString {

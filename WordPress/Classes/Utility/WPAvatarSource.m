@@ -37,7 +37,7 @@ static NSString *const GravatarBaseUrl = @"http://gravatar.com";
         _gravatarCache.name = @"GravatarCache";
         _blavatarCache = [[NSCache alloc] init];
         _blavatarCache.name = @"BlavatarCache";
-        _processingQueue = dispatch_queue_create("org.wordpress.gravatar-resizing", DISPATCH_QUEUE_CONCURRENT);
+        _processingQueue = dispatch_queue_create("org.danipress.gravatar-resizing", DISPATCH_QUEUE_CONCURRENT);
     }
     return self;
 }

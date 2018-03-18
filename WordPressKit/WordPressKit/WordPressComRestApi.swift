@@ -34,7 +34,7 @@ open class WordPressComRestApi: NSObject {
 
     @objc open static let apiBaseURLString: String = "https://public-api.wordpress.com/"
     
-    @objc open static let defaultBackgroundSessionIdentifier = "org.wordpress.wpcomrestapi"
+    @objc open static let defaultBackgroundSessionIdentifier = "org.danipress.wpcomrestapi"
     
     @objc open let backgroundSessionIdentifier: String
 

@@ -8,11 +8,11 @@
 	<string>app-store</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>org.wordpress</key>
+		<key>org.danipress</key>
 		<string>WordPress App Store</string>
-		<key>org.wordpress.WordPressShare</key>
+		<key>org.danipress.WordPressShare</key>
 		<string>WordPress Share App Store Distribution</string>
-		<key>org.wordpress.WordPressTodayWidget</key>
+		<key>org.danipress.WordPressTodayWidget</key>
 		<string>WordPress Today Widget App Store Distribution</string>
 	</dict>
 	<key>signingCertificate</key>

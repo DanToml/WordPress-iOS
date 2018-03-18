@@ -68,7 +68,7 @@ extension NetworkStatusDelegate where Self: UIViewController {
 }
 
 fileprivate struct NetworkStatusAssociatedKeys {
-    static var associatedObjectKey = "org.wordpress.networkstatus.notificationreceiver"
+    static var associatedObjectKey = "org.danipress.networkstatus.notificationreceiver"
 }
 
 fileprivate final class ReachabilityNotificationObserver: NSObject {

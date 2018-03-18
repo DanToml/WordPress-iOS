@@ -8,7 +8,7 @@ import CocoaLumberjack
 ///
 open class MediaImportService: LocalCoreDataService {
 
-    private static let defaultImportQueue: DispatchQueue = DispatchQueue(label: "org.wordpress.mediaImportService", autoreleaseFrequency: .workItem)
+    private static let defaultImportQueue: DispatchQueue = DispatchQueue(label: "org.danipress.mediaImportService", autoreleaseFrequency: .workItem)
 
     @objc public lazy var importQueue: DispatchQueue = {
         return MediaImportService.defaultImportQueue

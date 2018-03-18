@@ -8,11 +8,11 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.org.wordpress.alpha</string>
+		<string>group.org.danipress.alpha</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>99KV9Z6BKV.org.wordpress.alpha</string>
+		<string>99KV9Z6BKV.org.danipress.alpha</string>
 	</array>
 </dict>
 </plist>
