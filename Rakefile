@@ -59,13 +59,15 @@ namespace :dependencies do
       manifest = 'Pods/Manifest.lock'
       unless check_manifest(lockfile, manifest)
         dependency_failed("CocoaPods")
+        if ENV['CI']
+          sh "curl -sS https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash"
+        end
         Rake::Task["dependencies:pod:install"].invoke
       end
     end
 
     task :install do
       fold("install.cocoapds") do
-        pod %w[repo update --silent] unless ENV['CI']
         pod %w[install]
       end
     end
