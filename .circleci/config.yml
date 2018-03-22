@@ -1,53 +1,10 @@
 version: 2
 
-workflows:
-  version: 2
-  build_test:
-    jobs:
-      - lint
-      - test
-      - build_binary
-# filters:
-#   branches:
-#     only: master
-
 jobs:
-  lint:
-    docker:
-      - image: dantoml/swiftlint
-    steps:
-      - checkout
-      - run: swiftlint lint
-
-  build_binary:
+  build:
     macos:
-      xcode: 9.2.0
-    steps:
-      - checkout
-      - restore_cache:
-          key: v2-gems-{{ checksum "Gemfile.lock" }}
-      - run: bundle check || bundle install --path .bundle --jobs 3 --retry 3
-      - save_cache:
-          key: v2-gems-{{ checksum "Gemfile.lock" }}
-          paths: .bundle
-      - run: xcodebuild -workspace WordPress.xcworkspace -scheme WordPress -configuration Release clean archive -archivePath "build/WordPress-iOS.xcarchive" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-      - run: tar -cvf WordPress-iOS.xcarchive.tar.gz build/WordPress-iOS.xcarchive
-      - store_artifacts:
-          path: WordPress-iOS.xcarchive.tar.gz
-      - persist_to_workspace:
-          root: build/
-          paths:
-            - WordPress-iOS.xcarchive
-  test:
-    macos:
-      xcode: 9.2.0
-    steps:
-      - checkout
-      - restore_cache:
-          key: v2-gems-{{ checksum "Gemfile.lock" }}
-      - run: bundle check || bundle install --path .bundle --jobs 3 --retry 3
-      - save_cache:
-          key: v2-gems-{{ checksum "Gemfile.lock" }}
-          paths: .bundle
-
-      - run: xcodebuild -destination 'platform=iOS Simulator,name=iPhone 6s' -sdk iphonesimulator -workspace WordPress.xcworkspace -scheme WordPress -configuration Debug build test | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
+      xcode: "9.2.0"
+   steps:
+     - checkout
+     - run: bundle install
+     - run: bundle exec fastlane scan --scheme WordPress
